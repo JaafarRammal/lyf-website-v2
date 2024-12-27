@@ -13,7 +13,7 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 
 const navLinks = [
     { href: "/calendar", label: "Calendar" },
-    { href: "/prayer-times", label: "Prayer Times" },
+    // { href: "https://www.aimislam.com/monthly-prayer-times/", label: "Prayer Times", target: "_blank" },
     { href: "/blog", label: "Blog" },
     { href: "/merch", label: "Merch" },
 ]
@@ -40,12 +40,23 @@ const MobileNavLink = ({ href, label, onClick }: { href: string; label: string; 
     </Link>
 )
 
+// Donate button
+const DonateButton = () => (
+    <NavigationMenuItem>
+        <Link href="https://pay.sumup.io/b2c/QJMTG9LM" legacyBehavior passHref target="_blank">
+            <NavigationMenuLink target="_blank" className="inline-flex items-center px-6 py-2 text-sm rounded-lg bg-primary hover:bg-primary-dark transition-colors text-white font-semibold">
+                Donate
+            </NavigationMenuLink>
+        </Link>
+    </NavigationMenuItem>
+)
+
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const handleClose = () => setIsOpen(false)
 
     return (
-        <nav className="bg-white sticky top-0 z-50 border-b">
+        <nav className="bg-white sticky top-0 z-50 border-b border-t">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <Link href="/" className="text-2xl font-bold">
                     LYF
@@ -62,6 +73,7 @@ export function Navbar() {
                                     label={link.label}
                                 />
                             ))}
+                            <DonateButton />
                         </NavigationMenuList>
                     </NavigationMenu>
                 </div>
@@ -85,6 +97,7 @@ export function Navbar() {
                                     onClick={handleClose}
                                 />
                             ))}
+                            <DonateButton />
                         </div>
                     </div>
                 )}

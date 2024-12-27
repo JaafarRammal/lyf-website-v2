@@ -75,6 +75,28 @@ const contactInfo = [
 export function Footer() {
     return (
         <footer className="bg-white border-t w-full">
+            <div className="w-full space-y-6 md:space-y-0 flex flex-col md:flex-row md:items-start items-center md:justify-around justify-start gap-4 py-10 border-b">
+                <div className="text-center md:text-left">
+                    <h2 className="font-bold text-3xl mb-4">Support our Mission</h2>
+                    <p className="text-gray-600 max-w-md mb-6">
+                        Your donation helps us continue making a difference in the lives of youth. Every contribution counts.
+                    </p>
+                    <a
+                        href="https://pay.sumup.io/b2c/QJMTG9LM"
+                        target="_blank"
+                        className="inline-flex items-center px-6 py-3 rounded-lg bg-primary hover:bg-primary-dark transition-colors text-white font-semibold"
+                    >
+                        <svg
+                            className="w-5 h-5 mr-2"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z" />
+                        </svg>
+                        Donate Today
+                    </a>
+                </div>
+            </div>
             <div className="container mx-auto px-4 py-8">
                 <div className="space-y-6 md:space-y-0 flex flex-col md:flex-row md:items-start items-center md:justify-around justify-start gap-4">
                     {/* Social Links */}
