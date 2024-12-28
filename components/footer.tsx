@@ -75,10 +75,10 @@ const contactInfo = [
 export function Footer() {
     return (
         <footer className="bg-white border-t w-full">
-            <div className="w-full space-y-6 md:space-y-0 flex flex-col md:flex-row md:items-start items-center md:justify-around justify-start gap-4 py-10 border-b">
+            <div className="w-full space-y-6 md:space-y-0 flex flex-col md:flex-row md:items-start items-center md:justify-around justify-start gap-4 py-10 border-b bg-muted">
                 <div className="text-center md:text-left">
                     <h2 className="font-bold text-3xl mb-4">Support our Mission</h2>
-                    <p className="text-gray-600 max-w-md mb-6">
+                    <p className="text-gray-600 max-w-md mb-6 px-2">
                         Your donation helps us continue making a difference in the lives of youth. Every contribution counts.
                     </p>
                     <a
