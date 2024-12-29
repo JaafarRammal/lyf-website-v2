@@ -3,13 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import {
-    NavigationMenu,
-    NavigationMenuList,
-    NavigationMenuLink,
-    NavigationMenuItem,
-} from "@/components/ui/navigation-menu";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@/components/ui/navigation-menu";
 
 const navLinks = [
     { href: "/calendar", label: "Calendar" },
@@ -20,35 +14,35 @@ const navLinks = [
 // Desktop NavLink with NavigationMenuItem
 const DesktopNavLink = ({ href, label }: { href: string; label: string }) => (
     <NavigationMenuItem>
-        <Link href={href} legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                {label}
-            </NavigationMenuLink>
+        <Link
+            href={href}
+            className="inline-flex items-center px-4 py-2 text-sm rounded-lg text-white font-semibold bg-black hover:bg-white hover:text-black transition-colors active:bg-white active:text-black"
+        >
+            {label}
         </Link>
     </NavigationMenuItem>
 );
 
 // Mobile NavLink without NavigationMenu components
 const MobileNavLink = ({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) => (
-    <a
+    <Link
         href={href}
         onClick={onClick}
-        className="inline-flex items-center px-4 py-2 text-sm rounded-lg bg-white hover:bg-gray-200 transition-colors text-gray-800"
+        className="inline-flex items-center px-4 py-2 text-sm rounded-lg text-white font-semibold bg-black hover:bg-white hover:text-black transition-colors active:bg-white active:text-black"
     >
         {label}
-    </a>
+    </Link>
 );
 
 // Donate button
 const DonateButton = () => (
     <NavigationMenuItem>
-        <Link href="https://pay.sumup.io/b2c/QJMTG9LM" legacyBehavior passHref target="_blank">
-            <NavigationMenuLink
-                target="_blank"
-                className="inline-flex items-center px-6 py-2 text-sm rounded-lg bg-primary hover:bg-primary-dark transition-colors text-white font-semibold"
-            >
-                Donate
-            </NavigationMenuLink>
+        <Link
+            href="https://pay.sumup.io/b2c/QJMTG9LM"
+            target="_blank"
+            className="inline-flex items-center px-6 py-2 text-sm rounded-lg bg-primary hover:bg-primary-dark transition-colors text-black font-semibold bg-white"
+        >
+            Donate
         </Link>
     </NavigationMenuItem>
 );
@@ -58,9 +52,9 @@ export function Navbar() {
     const handleClose = () => setIsOpen(false);
 
     return (
-        <nav className="bg-white sticky top-0 z-50 border-b border-t">
+        <nav className="bg-black text-white sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link href="/" className="text-2xl font-bold">
+                <Link href="/" className="text-2xl font-bold flex gap-2 items-center">
                     LYF
                 </Link>
 
@@ -69,11 +63,7 @@ export function Navbar() {
                     <NavigationMenu>
                         <NavigationMenuList className="gap-6">
                             {navLinks.map((link) => (
-                                <DesktopNavLink
-                                    key={link.href}
-                                    href={link.href}
-                                    label={link.label}
-                                />
+                                <DesktopNavLink key={link.href} href={link.href} label={link.label} />
                             ))}
                             <DonateButton />
                         </NavigationMenuList>
@@ -89,21 +79,13 @@ export function Navbar() {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="absolute top-16 left-0 w-full bg-white border-b z-50 md:hidden">
+                    <div className="absolute top-16 left-0 w-full bg-black border-b z-50 md:hidden border-t">
                         <NavigationMenu>
-                            <NavigationMenuList className="px-4 py-4 flex flex-col space-y-4 items-start">
+                            <NavigationMenuList className="px-4 py-4 flex flex-col space-y-4 items-start ">
                                 {navLinks.map((link) => (
-                                    <NavigationMenuItem key={link.href}>
-                                        <MobileNavLink
-                                            href={link.href}
-                                            label={link.label}
-                                            onClick={handleClose}
-                                        />
-                                    </NavigationMenuItem>
+                                    <MobileNavLink key={link.href} href={link.href} label={link.label} onClick={handleClose} />
                                 ))}
-                                <NavigationMenuItem>
-                                    <DonateButton />
-                                </NavigationMenuItem>
+                                <DonateButton />
                             </NavigationMenuList>
                         </NavigationMenu>
                     </div>
