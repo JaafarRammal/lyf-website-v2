@@ -7,6 +7,9 @@ interface RawEvent {
     title: string;
 }
 
+export const dynamic = "force-static"; // This ensures the route is treated as static
+export const revalidate = false; // Prevents revalidation
+
 export async function GET(): Promise<Response> {
     try {
         const fileId = "1XGWEnAb7ctssgYKYtiMm0qQoXVRFSlkI"; // Replace with your file ID
