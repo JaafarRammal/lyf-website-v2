@@ -6,7 +6,7 @@ export function Hero() {
             className="min-h-[80vh] flex items-center"
             style={{ backgroundImage: "url('/hero-slide/hero-4.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
         >
-            <div className="max-w-[95rem] md:text-start font-bold text-lg md:text-xl text-center text-white  p-10 mx-auto flex md:flex-row flex-col justify-between items-center gap-16">
+            <div className="max-w-[95rem] md:text-start font-bold text-lg md:text-xl text-center text-white p-10 mx-auto flex md:flex-row flex-col justify-between items-center gap-16">
                 <div className="flex-1 space-y-4">
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         <Image src="/logo.png" width={1000} height={1000} alt="logo" className="size-20" />

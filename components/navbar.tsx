@@ -7,8 +7,8 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@/compon
 
 const navLinks = [
     { href: "/calendar", label: "Calendar" },
-    { href: "/blog", label: "Blog" },
-    { href: "/merch", label: "Merch" },
+    // { href: "/blog", label: "Blog" },
+    // { href: "/merch", label: "Merch" },
 ];
 
 // Desktop NavLink with NavigationMenuItem

@@ -1,6 +1,6 @@
 "use client";
 
-import { HandHeart, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const socialLinks = [
     {
@@ -63,11 +63,11 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-    {
-        icon: HandHeart,
-        text: "Donate",
-        href: "https://pay.sumup.io/b2c/QJMTG9LM"
-    },
+    // {
+    //     icon: HandHeart,
+    //     text: "Donate",
+    //     href: "https://pay.sumup.io/b2c/QJMTG9LM"
+    // },
     { icon: Mail, text: "contact@lyf.com", href: "mailto:contact@lyf.com" },
     { icon: Phone, text: "+1 234 567 8900", href: "tel:+12345678900" },
 ];
