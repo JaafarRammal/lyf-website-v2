@@ -27,6 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="LYF" />
+        <meta name="application-name" content="LYF" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Lebanese Youth Foundation" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         <div className="mx-auto">
