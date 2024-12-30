@@ -7,13 +7,11 @@ interface RawEvent {
     title: string;
 }
 
-// export const dynamic = "force-static"; // This ensures the route is treated as static
-export const revalidate = 600; // Re-fetches data every 600 seconds = 10 minutes
-
 export async function GET(): Promise<Response> {
     try {
         const fileId = "1XGWEnAb7ctssgYKYtiMm0qQoXVRFSlkI"; // Replace with your file ID
-        const url = `https://drive.google.com/uc?export=download&id=${fileId}`;
+        const timestamp = new Date().getTime(); // Add timestamp to force a fresh request
+        const url = `https://drive.google.com/uc?export=download&id=${fileId}&_=${timestamp}`; // Append timestamp to URL
 
         const response = await fetch(url);
 
@@ -45,6 +43,7 @@ export async function GET(): Promise<Response> {
             status: 200,
             headers: {
                 "Content-Type": "application/json",
+                "Cache-Control": "no-store", // Prevent caching by browsers/CDNs
             },
         });
     } catch (error) {
@@ -55,6 +54,7 @@ export async function GET(): Promise<Response> {
                 status: 500,
                 headers: {
                     "Content-Type": "application/json",
+                    "Cache-Control": "no-store", // Prevent caching
                 },
             }
         );
