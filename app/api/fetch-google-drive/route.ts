@@ -7,8 +7,6 @@ interface RawEvent {
     title: string;
 }
 
-export const dynamic = "force-dynamic";
-
 export async function GET(): Promise<Response> {
     try {
         const fileId = "1XGWEnAb7ctssgYKYtiMm0qQoXVRFSlkI"; // Replace with your file ID
