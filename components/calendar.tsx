@@ -4,8 +4,8 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { CalendarEvent } from "@/lib/calendarEvent";
 import React from "react";
-import { useEvents } from "@/contexts/EventsContext";
 import { Spinner } from "./spinner";
+import { events } from "@/lib/events";
 
 // Setup the localizer by providing the moment (or globalize, or Luxon) Object
 // to the correct localizer.
@@ -25,11 +25,9 @@ const MyCalendar = (props: CalendarProps) => (
 );
 
 export function EventsCalendar() {
-    const { events, error } = useEvents();
 
     return (
         <div>
-            {error && <p className="py-4 text-red-500 font-bold">{error}</p>}
             <MyCalendar events={events} />
         </div>
     );

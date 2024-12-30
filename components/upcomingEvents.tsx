@@ -1,8 +1,8 @@
 "use client";
 
-import { useEvents } from "@/contexts/EventsContext";
 import { Skeleton } from "./ui/skeleton";
 import { CalendarEvent } from "@/lib/calendarEvent";
+import { events } from "@/lib/events";
 import { monthToText } from "@/lib/utils";
 import { format } from "date-fns";
 
@@ -31,7 +31,6 @@ const Month = ({ month, events }: { month: string; events: CalendarEvent[] }) =>
 );
 
 export function UpcomingEvents() {
-    const { events } = useEvents();
 
     const latestEvents = events
         ?.filter((event) => event.start.getTime() >= new Date().setHours(0, 0, 0, 0))
