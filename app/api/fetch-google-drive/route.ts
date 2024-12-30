@@ -7,7 +7,7 @@ interface RawEvent {
     title: string;
 }
 
-export const dynamic = "force-static"; // This ensures the route is treated as static
+export const dynamic = "force-dynamic";
 
 export async function GET(): Promise<Response> {
     try {
@@ -24,8 +24,6 @@ export async function GET(): Promise<Response> {
         // Parse raw JSON data
         const rawEvents: RawEvent[] = await response.json();
 
-        console.log(rawEvents);
-
         // Map raw events to CalendarEvent[]
         const parsedEvents: CalendarEvent[] = rawEvents.map((event) => {
             const startDate = new Date(event.start);
@@ -38,8 +36,6 @@ export async function GET(): Promise<Response> {
                 title: event.title,
             };
         });
-
-        console.log(parsedEvents);
 
         return new Response(JSON.stringify(parsedEvents), {
             status: 200,
