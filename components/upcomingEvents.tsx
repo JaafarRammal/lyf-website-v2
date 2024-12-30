@@ -68,7 +68,8 @@ function Event({ event }: { event: CalendarEvent }) {
             <div className="space-y-2 w-fit">
                 <p className="font-bold">{event.title}</p>
                 <p>
-                    {event.start.toLocaleDateString()} - {event.end.toLocaleDateString()}
+                    {event.start.toLocaleDateString()} - {event.end.toLocaleDateString()}<br />
+                    {event.start.toLocaleTimeString()} - {event.end.toLocaleTimeString()}
                 </p>
             </div>
         </div>
