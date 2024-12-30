@@ -8,7 +8,7 @@ interface RawEvent {
 }
 
 export const dynamic = "force-static"; // This ensures the route is treated as static
-export const revalidate = false; // Prevents revalidation
+export const revalidate = 600; // Re-fetches data every 600 seconds = 10 minutes
 
 export async function GET(): Promise<Response> {
     try {
