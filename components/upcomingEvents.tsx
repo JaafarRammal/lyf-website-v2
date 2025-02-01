@@ -35,7 +35,7 @@ export function UpcomingEvents() {
     const latestEvents = events
         ?.filter((event) => event.start.getTime() >= new Date().setHours(0, 0, 0, 0))
         .sort((a, b) => a.start.getTime() - b.start.getTime())
-        .slice(0, 20);
+        .slice(0, 6);
 
     return (
         <div className="max-w-[95rem] mx-auto p-10 md:px-40 flex flex-col gap-8">
